@@ -60,6 +60,7 @@
 <h2>管理者情報登録</h2>
 
 <div class="form-container">
+
     <label>氏名</label>
     <input id="name" class="form-input" type="text">
 
@@ -69,27 +70,8 @@
     <label>組織名（会社名）</label>
     <input id="org" class="form-input" type="text">
 
-    <!-- Privacy Policy -->
-    <div class="privacy-policy-wrap">
-        <p>
-            <a href="https://minnanobousaisouko.com/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E3%83%9D%E3%83%AA%E3%82%B7%E3%83%BC" target="_blank">
-                プライバシーポリシー
-            </a>をご確認ください。
-        </p>
-        <input type="checkbox" id="agreeCheckbox" onchange="btnSubmit.disabled = !this.checked">
-        <label>同意する</label>
-        <!-- <label class="privacy-checkbox-label">
-            <input type="checkbox" id="agreeCheckbox">
-            プライバシーポリシーに同意する
-        </label> -->
-    </div>
-    <button class="btn btn-green" id="btnSubmit" disabled>
-        登録する
-    </button>
-    <!-- <input type="checkbox" id="agreeCheckbox" onchange="btnSubmit.disabled = !this.checked">
-    <button id="btnSubmit" disabled>登録する</button> -->
+    <button class="btn btn-green" id="btnSubmit">登録する</button>
 </div>
-
 
 <div id="msgArea"></div>
 <div id="debugArea" class="debug"></div>
@@ -104,17 +86,6 @@ renderHeader("みんなの防災倉庫管理");
 renderFooter();
 
 let lineId = null;
-
-// ===  Checkbox Control ===
-const checkbox = document.getElementById("agreeCheckbox");
-const btn = document.getElementById("btnSubmit");
-
-checkbox.addEventListener("change", () => {
-    btn.disabled = !checkbox.checked;
-    btn.classList.toggle("disabled", !checkbox.checked);
-});
-
-// ============================
 // LIFF INIT
 // ============================
 async function main() {
